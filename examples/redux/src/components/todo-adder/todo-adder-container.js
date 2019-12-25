@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import TodoAdder from './todo-adder';
+import LoadableTodoAdder from './loadable-todo-adder';
 import { addTodo } from '../../actions';
 
-export default connect(null, { addTodo })(TodoAdder);
+export default connect(null, { addTodo })(LoadableTodoAdder);

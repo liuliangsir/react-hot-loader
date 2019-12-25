@@ -5,10 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index',
+    app: [
+      'react-hot-loader/patch',
+      './src/index'
+    ],
   },
   mode: process.env.NODE_ENV || 'development',
-  //devtool: false,
+  devtool: 'cheap-module-eval-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',

@@ -1,14 +1,19 @@
 import React from 'react';
-import { TodoAdder, TodoList } from '../../components';
-
+import { Route, Switch, Redirect, BrowserRouter as Router } from 'react-router-dom';
+import { TodoAdder } from '../../components';
+// import asyncComponent from '../../utils/asyncComponent';
 import './todo-container.css';
+
+// const TodoAdder = asyncComponent(() => import('../../components/todo-adder').then(module => module.TodoAdder));
 
 export default function TodoContainer() {
   return (
-    <div className="todo-container">
-      <h1>Todo List</h1>
-      <TodoAdder />
-      <TodoList />
-    </div>
+    <Router>
+      <div className="todo-content">
+        <Switch>
+          <Route exact path="/" component={TodoAdder} />
+        </Switch>
+      </div>
+    </Router>
   );
 }

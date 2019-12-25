@@ -7,6 +7,7 @@ import store from './store'
 import App from './containers';
 
 const root = document.createElement('div');
+root.className = "todo-container"
 document.body.appendChild(root);
 
 const AppDnD = DragDropContext(HTML5Backend)(App);

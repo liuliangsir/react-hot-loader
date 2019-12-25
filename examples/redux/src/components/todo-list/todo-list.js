@@ -3,7 +3,7 @@ import React from 'react';
 import Todo from '../todo';
 
 const TodoList = ({ todos }) => (
-  <ul className="todo-list">
+  <ul className="todo-container">
     {todos && todos.length
       ? todos.map((todo, index) => {
           return <Todo key={`todo-${todo.id}`} todo={todo} />;
