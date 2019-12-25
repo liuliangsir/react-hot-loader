@@ -1,17 +1,16 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {createStore, combineReducers} from 'redux';
-
 import {render} from 'react-dom';
-import App from './App';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
+import store from './store'
+import App from './containers';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
 
-const store =createStore(combineReducers({}));
-
+const AppDnD = DragDropContext(HTML5Backend)(App);
 render(
-  <Provider store={store}>
-    <App/>
-  </Provider>
-  , root);
+  <AppDnD store={store} />,
+  root
+);
